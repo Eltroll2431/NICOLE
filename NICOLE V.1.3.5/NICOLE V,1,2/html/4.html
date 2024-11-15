@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro N.I.C.O.L.E</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url("../img/fondo.png"); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: absolute;
+            left: 20px;
+        }
+
+        .circle {
+            width: 30px; /* Nuevo tamaño */
+            height: 30px; /* Nuevo tamaño */
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .n-text {
+            color: #333;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .brand-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .welcome-text {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-left: auto;
+            text-align: left;
+            max-width: 200px;
+            position: absolute;
+            left: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+
+        .right-text {
+            font-size: 16px;
+            line-height: 1.5;
+            max-width: 200px;
+            position: absolute;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+
+        .container {
+            width: 400px;
+            margin-top: 50px;
+            background-color: rgb(255, 255, 255); 
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        main {
+            text-align: center;
+        }
+
+        .register-form {
+            margin-bottom: 10px;
+        }
+
+
+        .register-logo {
+            width: 100px;
+          
+            overflow: hidden; 
+            object-fit: cover; 
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            font-size: 14px;
+        }
+
+        .buttons {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .back-btn, .next-btn {
+            width: 48%;
+            padding: 10px;
+            border: none;
+            border-radius: 15px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .back-btn {
+            background-color: #6c63ff; 
+            color: white;
+        }
+
+        .next-btn {
+            background-color: #a4d466;
+            color: white;
+        }
+
+        .links {
+            margin-top: 10px;
+        }
+
+        .links a {
+            color: #333;
+            font-size: 12px;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .cta-text {
+            font-size: 16px;
+            color: #FFF;
+            text-align: center;
+            line-height: 1.5;
+            margin-top: 20px;
+            max-width: 300px;
+            align-self: center;
+        }
+
+     
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            .brand-name {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .cta-text {
+                font-size: 14px;
+            }
+
+            .logo {
+                left: 10px;
+            }
+
+            
+            .welcome-text,
+            .right-text {
+                display: none;
+            }
+
+           
+            .register-logo {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <div class="circle">
+                <span class="n-text">N</span>
+            </div>
+            <span class="brand-name">I.C.O.L.E</span>
+        </div>
+    </div>
+    <div class="container">
+        <main>
+            <div class="register-form">
+                <img src="../img/img.jpeg" class="register-logo"> <!-- Hacer circular el logo -->
+                <h2>regístrate ya!!!</h2>
+                <form>
+                    <input type="text" placeholder="Ingrese su nombre" required>
+                    <input type="email" placeholder="Ingrese un correo electrónico" required>
+                    <input type="password" placeholder="Ingrese una contraseña" required>
+                    <input type="password" placeholder="Confirmar contraseña" required>
+                    <div class="buttons">
+                        <a href="../html/1.html" type="button" class="back-btn">regresar</a>
+                        <a href="../html/5.html" type="submit" class="next-btn">siguiente</a>
+                    </div>
+                </form>
+                <div class="links">
+                    <a href="#">privacidad</a>
+                    <a href="#">términos & condiciones</a>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

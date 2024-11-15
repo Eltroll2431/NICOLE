@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.I.C.O.L.E - Encuesta</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+            position: relative;
+            background-image: url("../img/fondo.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            width: 400px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            width: 100px; 
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: calc(100% - 24px);
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 15px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .buttons button {
+            width: 48%;
+            padding: 12px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .btn-back {
+            background-color: #1c0abb9c; /* Color para "Regresar" */
+        }
+
+        .btn-next {
+            background-color: #a4d466; /* Color para "Iniciar Sesión" */
+        }
+
+        .links {
+            margin-top: 10px;
+        }
+
+        .links a {
+            color: #333;
+            font-size: 12px;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        .text-outside-left, .text-outside-right {
+            position: absolute;
+            font-size: 16px;
+            color: rgb(85, 56, 89);
+            font-weight: bold;
+        }
+
+        .text-outside-left {
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+            text-align: left;
+        }
+
+        .text-outside-right {
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="../img/img.jpeg" alt="Logo" class="logo">
+        <div class="title">N.I.C.O.L.E</div>
+        <div class="subtitle">¡Ayúdanos a conocer más de ti!</div>
+        <div class="question">¿Qué te gusta más?</div>
+        <div class="input-group">
+            <input type="radio" name="preference" value="salado"> Salado
+            <input type="radio" name="preference" value="dulce"> Dulce
+            <input type="radio" name="preference" value="acido"> Ácido
+            <input type="radio" name="preference" value="picante"> Picante
+        </div>
+        <div class="input-group">
+            <input type="text" placeholder="¿Eres alérgico a algo? Como una fruta o comida, déjanos saber">
+            <input type="text" placeholder="Alergias">
+        </div>
+        <div class="input-group">
+            <input type="text" placeholder="Peso">
+            <input type="text" placeholder="Altura">
+        </div>
+        <div class="buttons">
+            <button class="btn-back" type="button" onclick="window.location.href='4.html'">Regresar</button>
+            <button class="btn-next" type="button" onclick="window.location.href='../3.html'">Iniciar Sesión</button>
+        </div>
+        <div class="links">
+            <a href="#">privacidad</a>
+            <a href="#">Términos & Condiciones</a>
+        </div>
+    </div>
+</body>
+</html>

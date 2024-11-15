@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <style>
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f8c6c1, #fccedb);
+    position: relative;
+
+     background-size: cover; 
+     background-position: center;
+     background-repeat: no-repeat; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    background-image: url("../img/fondo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+        .container {
+            width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff4d88;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        input[type="email"], input[type="password"] {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            font-size: 16px;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1c0abb9c;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .register {
+            background-color: #a4d466;
+        }
+
+        a {
+            display: block;
+            margin-top: 10px;
+            color: #666;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mensaje de error */
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+            margin-bottom: 10px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        .log {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: absolute;
+            left: 20px;
+        }
+        .circle {
+            width: 30px; /* Nuevo tamaño */
+            height: 30px; /* Nuevo tamaño */
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .n-text {
+            color: #333;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .brand-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+    <script>
+        function validarFormulario() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var errorMensaje = document.getElementById('error-mensaje');
+
+            // Verificar si los campos están vacíos
+            if (email === '' || password === '') {
+                errorMensaje.style.display = 'block';  // Mostrar mensaje de error
+                return false; // Prevenir el envío del formulario
+            } else {
+                errorMensaje.style.display = 'none'; // Ocultar mensaje de error
+                return true; // Permitir el envío del formulario
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- esto es para el logo ese 
+    <div class="header">
+        <div class="log">
+            <div class="circle">
+                <span class="n-text">N</span>
+            </div>
+            <span class="brand-name">I.C.O.L.E</span>
+        </div>-->
+   
+    <div class="container">
+        <div class="logo">
+            <img src="../img/img.jpeg">
+            N.I.C.O.L.E
+        </div>
+
+        <!-- Mensaje de error que se mostrará si los campos no están llenos -->
+        <p id="error-mensaje" class="error">Por favor, completa todos los campos.</p>
+
+        
+            <input type="email" id="email" placeholder="Correo electrónico" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button class="submit" type="submit" onclick="window.location.href='../3.html'">Iniciar sesión</button>
+
+            <button class="register" type="button" onclick="window.location.href='4.html'">Registrarse</button>
+            <a href="6.html">¿Olvidaste tu contraseña?</a>
+            <a href="#">Términos y condiciones</a>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta: Tacos de Pollo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #FFDDC1, #FEC8D8);
+            background-attachment: fixed; /* Hace que el fondo se quede fijo al hacer scroll */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Alineamos el contenido al inicio del eje vertical */
+            padding-top: 30px; /* Espacio superior para el contenido */
+        }
+
+        .container {
+            background-color: white;
+            width: 80%;
+            max-width: 900px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 120px;
+        }
+
+        .header input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .header button {
+            padding: 10px 20px;
+            background-color: #F06292;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .receta-titulo {
+            text-align: center;
+            font-size: 24px;
+            margin: 40px 0 20px 0; /* Aumenta el margen superior para evitar que quede tapado */
+            color: #333;
+        }
+
+        .contenido {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .contenido .imagen-receta {
+            width: 40%;
+        }
+
+        .contenido .imagen-receta img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .contenido .detalles {
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .detalles .datos, .detalles .ingredientes, .detalles .pasos {
+            background-color: #FEEAE6;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .datos h3, .ingredientes h3, .pasos h3 {
+            font-size: 18px;
+            color: #E57373;
+            margin-bottom: 10px;
+        }
+
+        .datos p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .ingredientes ul, .pasos ol {
+            list-style: center;
+            padding: 0;
+        }
+
+        .ingredientes ul li, .pasos ol li {
+            background-color: #F8BBD0;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 10px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .pasos ol li span {
+            background-color: #FF80AB;
+            padding: 4px 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+        }
+
+        .footer {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .footer button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <img src="img/img.jpeg" alt="Logo N.I.C.O.L.E.">
+            <input type="text" placeholder="Escribe una receta o busca un ingrediente...">
+            <button>Generar</button>
+        </div>
+
+        <h1 class="receta-titulo">Tacos de Pollo</h1>
+
+        <div class="contenido">
+            <div class="imagen-receta">
+                <img src="../img/papas.jpeg" alt="Papas a la Francesa">
+            </div>
+            <div class="detalles">
+                <div class="datos">
+                    <h3>Datos sobre este platillo</h3>
+                    <p>El pastel de chocolate, tarta de chocolate o torta de chocolate, es un postre conocido internacionalmente, que se popularizó a finales del siglo XIX y se sirve frecuentemente en reuniones, como bodas y fiestas de cumpleaños.</p>
+                </div>
+                <div class="ingredientes">
+                    <h3>Ingredientes</h3>
+                    <ul>
+                        <li>2 pechugas de pollo Campollo, cortadas en tiras.</li>
+                            <li>4 tortillas de maíz o harina. </li>
+                            <li>1 cebolla morada, cortada en julianas. </li>
+                           <li> 1 pimiento rojo, cortado en tiras. </li>
+                           <li> 1 pimiento verde, cortado en tiras. </li>
+                            <li>1 tomate, cortado en cubitos. </li>
+                           <li> 1/2 taza de lechuga picada.</li>
+                            <li>1/4 taza de cilantro fresco, picado. </li>
+                        <li>1 limón, cortado en cuartos. </li>
+                        <li>Aceite. </li>
+                        <li>1 aguacate grande, cortado en rodajas. </li>
+                        <li>Sal y pimienta al gusto.</li> 
+                    </ul>
+                </div>
+                <div class="pasos">
+                    <h3>Paso a paso</h3>
+                    <ol>
+                        <li><span>1</span>En una sartén grande, calienta un poco de aceite a fuego medio-alto. Agrega las tiras de pollo y sazona con sal y pimienta al gusto. Cocina el pollo hasta que esté dorado y completamente cocido, aproximadamente de 5 a 7 minutos por cada lado. Retira el pollo de la sartén y reserva.</li>
+                        <li><span>2</span>En la misma sartén, agrega un poco más de aceite si es necesario y añade la cebolla morada, los pimientos rojo y verde. Saltea las verduras hasta que estén tiernas, pero aún crujientes, alrededor de 5 minutos. Retira las verduras de la sartén y reserva.</li>
+                        <li><span>3</span>Calienta las tortillas de maíz o harina en una sartén limpia o en el microondas hasta que estén calientes y flexibles.</li>
+                        <li><span>4</span>Para armar los tacos, coloca una porción de pollo cocido en el centro de cada tortilla caliente. Luego, agrega una porción de las verduras salteadas. Espolvorea un poco de tomate, lechuga y cilantro fresco sobre cada taco.</li>
+                        <li><span>5</span>Decora los tacos con rodajas de aguacate y exprime un poco de jugo de limón fresco sobre ellos para un toque de frescura adicional.</li>
+                        <li><span>6</span>¡Sirve tus tacos de pollo con tus acompañamientos favoritos, como salsa picante, crema agria y rodajas de limón adicionales, y disfruta de una comida deliciosa y reconfortante!</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

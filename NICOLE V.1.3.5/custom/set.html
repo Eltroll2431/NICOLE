@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de Perfil</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos del botón */
+.profile-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos de la tarjeta de perfil */
+.profile-card {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    z-index: 1000;
+}
+
+/* Efecto de fade-in cuando se muestre */
+.profile-card.show {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animación para el efecto de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    </style>
+</head>
+<body>
+   
+    <button id="profileBtn" class="profile-btn">Perfil de Usuario</button>
+
+    <div id="profileCard" class="profile-card">
+        <h3>Criss</h3>
+        <p>Edad: 17 años</p>
+        <p>Pasiones: Música, arte, programación</p>
+        <p>Estudiante en el SENA</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<script>
+    // Obtener los elementos del DOM
+const profileBtn = document.getElementById('profileBtn');
+const profileCard = document.getElementById('profileCard');
+
+// Mostrar la tarjeta y actualizar la posición al mover el ratón sobre el botón
+profileBtn.addEventListener('mousemove', (e) => {
+    profileCard.style.display = 'block';
+    profileCard.style.left = `${e.pageX + 15}px`; // Añadir un pequeño desplazamiento para que no cubra el cursor
+    profileCard.style.top = `${e.pageY + 15}px`;  // Desplazamiento desde el cursor
+});
+
+// Ocultar la tarjeta cuando se retira el cursor del botón
+profileBtn.addEventListener('mouseleave', () => {
+    profileCard.style.display = 'none';
+});
+
+</script>
+</html>

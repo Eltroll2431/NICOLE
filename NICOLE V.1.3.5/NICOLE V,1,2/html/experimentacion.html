@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.I.C.O.L.E - Refrigerador de Ingredientes y Recetas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fde9e1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            background-image: url('fondo.jpeg'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat; 
+        }
+        a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Mantiene el color del texto */
+}
+
+a:hover {
+    text-decoration: underline; /* Opcional, si quieres que el subrayado aparezca al pasar el cursor */
+}
+
+        .container {
+            width: 70%;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #fce5dc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e0e0e0;
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .user-dropdown {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .user-dropdown a {
+            display: block;
+            padding: 8px 0;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .user-dropdown a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .tabs button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #fce5dc;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .tabs button.active {
+            background-color: #ff4d88;
+            color: white;
+        }
+
+        .search-bar {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .search-bar input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            border-radius: 25px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            background-color: #ff4d88;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .ingredient-card, .recipe-box {
+            width: 150px;
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .ingredient-card:hover, .recipe-box:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+
+        .ingredient-card img, .recipe-box img {
+            width: 140%;
+            height: 100px;
+            border-radius: 10px;
+            max-width: 130px; /* Ajusta el tamaño máximo de la imagen */
+            max-height: 130px; /* Ajusta la altura máxima */
+        }
+
+        .ingredient-card p, .recipe-box p {
+            margin-top: 10px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .actions button {
+            padding: 10px 20px;
+            background-color: #ff4d88;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">N.I.C.O.L.E</div>
+            <div class="user-profile" onclick="toggleDropdown()">
+                <img src="user.jpeg" alt="User Profile">
+                <div class="user-dropdown" id="userDropdown">
+                    <a href="#">usuario0000@gmail.com</a>
+                    <a href="#">Configuraciones</a>
+                    <a href="1.html">Cerrar Sesión</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="tabs">
+            <button class="active" id="recetasBtn" onclick="showRecetas()">Recetas</button>
+            <button id="ingredientesBtn" onclick="showIngredientes()">Ingredientes</button>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Escribe una receta o busca un ingrediente...">
+            <button>Generar</button>
+        </div>
+
+        <div class="content" id="recetasContent">
+            <h2>Recetas Disponibles</h2>
+            <div class="grid-container">
+                <div class="recipe-box">
+                    <a href="receta01.html">
+                        <img src="P.webp" alt="Receta 01">
+                        <p>Receta 01: Pastel de Chocolate</p>
+                        <div class="stars">★★★★☆</div>
+                    </a>
+                </div>
+                <div class="recipe-box">
+                    <a href="receta02.html">
+                        <img src="ta.webp" alt="Receta 02">
+                        <p>Receta 02: Tacos de Pollo</p>
+                        <div class="stars">★★★★☆</div>
+                    </a>
+                </div>
+                <div class="recipe-box">
+                    <a href="receta03.html">
+                        <img src="en.jpeg" alt="Receta 03">
+                        <p>Receta 03: Ensalada César</p>
+                        <div class="stars">★★★☆☆</div>
+                    </a>
+                </div>
+                <div class="recipe-box">
+                    <a href="receta04.html">
+                        <img src="pizza.jpeg" alt="Receta 04">
+                        <p>Receta 04: Pizza Margarita</p>
+                        <div class="stars">★★★★★</div>
+                    </a>
+                </div>
+                <div class="recipe-box">
+                    <a href="receta05.html">
+                        <img src="amb.avif" alt="Receta 05">
+                        <p>Receta 05: Hamburguesa texana</p>
+                        <div class="stars">★★★★★</div>
+                    </a>
+                </div>
+                <div class="recipe-box">
+                    <a href="receta06.html">
+                        <img src="esp.jpg" alt="Receta 06">
+                        <p>Receta 06: Spaghetti Bolognese</p>
+                        <div class="stars">★★★★☆</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button>Recomendados</button>
+            </div>
+        </div>
+
+        <div class="content" id="ingredientesContent" style="display: none;">
+            <h2>Ingredientes Disponibles</h2>
+            <div class="grid-container">
+                <div class="ingredient-card">
+                    <img src="hamburguesa.jpeg" alt="Hamburguesa">
+                    <p>Hamburguesa de queso doble</p>
+                </div>
+                <div class="ingredient-card">
+                    <img src="panqueques.jpeg" alt="Panqueques">
+                    <p>Panqueques con jarabe de miel</p>
+                </div>
+                <div class="ingredient-card">
+                    <img src="pizza.jpeg" alt="Pizza">
+                    <p>Pizza de peperoni</p>
+                </div>
+                <div class="ingredient-card">
+                    <img src="pollo.jpg" alt="Pollo">
+                    <p>Pollo rostizado con especias</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('userDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function showRecetas() {
+            document.getElementById('recetasContent').style.display = 'block';
+            document.getElementById('ingredientesContent').style.display = 'none';
+            document.getElementById('recetasBtn').classList.add('active');
+            document.getElementById('ingredientesBtn').classList.remove('active');
+        }
+
+        function showIngredientes() {
+            document.getElementById('ingredientesContent').style.display = 'block';
+            document.getElementById('recetasContent').style.display = 'none';
+            document.getElementById('ingredientesBtn').classList.add('active');
+            document.getElementById('recetasBtn').classList.remove('active');
+        }
+    </script>
+</body>
+</html>

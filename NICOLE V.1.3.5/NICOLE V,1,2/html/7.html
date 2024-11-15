@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta: Papas a la Francesa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #FFDDC1, #FEC8D8);
+            background-attachment: fixed; /* Hace que el fondo se quede fijo al hacer scroll */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Alineamos el contenido al inicio del eje vertical */
+            padding-top: 30px; /* Espacio superior para el contenido */
+        }
+
+        .container {
+            background-color: white;
+            width: 80%;
+            max-width: 900px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 120px;
+        }
+
+        .header input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .header button {
+            padding: 10px 20px;
+            background-color: #F06292;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .receta-titulo {
+            text-align: center;
+            font-size: 24px;
+            margin: 40px 0 20px 0; /* Aumenta el margen superior para evitar que quede tapado */
+            color: #333;
+        }
+
+        .contenido {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .contenido .imagen-receta {
+            width: 40%;
+        }
+
+        .contenido .imagen-receta img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .contenido .detalles {
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .detalles .datos, .detalles .ingredientes, .detalles .pasos {
+            background-color: #FEEAE6;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .datos h3, .ingredientes h3, .pasos h3 {
+            font-size: 18px;
+            color: #E57373;
+            margin-bottom: 10px;
+        }
+
+        .datos p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .ingredientes ul, .pasos ol {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ingredientes ul li, .pasos ol li {
+            background-color: #F8BBD0;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 10px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .pasos ol li span {
+            background-color: #FF80AB;
+            padding: 4px 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+        }
+
+        .footer {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .footer button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <img src="img/img.jpeg" alt="Logo N.I.C.O.L.E.">
+            <input type="text" placeholder="Escribe una receta o busca un ingrediente...">
+            <button>Generar</button>
+        </div>
+
+        <h1 class="receta-titulo">Papas a la Francesa</h1>
+
+        <div class="contenido">
+            <div class="imagen-receta">
+                <img src="papas.jpeg" alt="Papas a la Francesa">
+            </div>
+            <div class="detalles">
+                <div class="datos">
+                    <h3>Datos sobre este platillo</h3>
+                    <p>Las papas fritas fueron inventadas por accidente. Se dice que en 1853, en un restaurante de Nueva York llamado Moon’s Lake House, un cliente se quejaba de que las papas que le sirvieron eran demasiado gruesas. El chef, George Crum, quiso molestar al cliente, cortó las papas en rodajas muy finas, las frió hasta que estuvieron crujientes, y las sirvió. Sorprendentemente, al cliente le encantaron, y así nacieron las papas fritas tal como las conocemos hoy.</p>
+                </div>
+                <div class="ingredientes">
+                    <h3>Ingredientes</h3>
+                    <ul>
+                        <li>2 papas al gusto</li>
+                        <li>1/2L aceite</li>
+                        <li>150g sal</li>
+                    </ul>
+                </div>
+                <div class="pasos">
+                    <h3>Paso a paso</h3>
+                    <ol>
+                        <li><span>1</span>Pela las papas y córtalas en 8 piezas, tomando en cuenta el ancho de estas.</li>
+                        <li><span>2</span>Fríe las papas en aceite caliente hasta que estén doradas y crujientes.</li>
+                        <li><span>3</span>Escurre el exceso de aceite y agrégales sal al gusto.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

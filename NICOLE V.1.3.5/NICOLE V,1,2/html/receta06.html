@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta: Tacos de Pollo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #FFDDC1, #FEC8D8);
+            background-attachment: fixed; /* Hace que el fondo se quede fijo al hacer scroll */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Alineamos el contenido al inicio del eje vertical */
+            padding-top: 30px; /* Espacio superior para el contenido */
+        }
+
+        .container {
+            background-color: white;
+            width: 80%;
+            max-width: 900px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 120px;
+        }
+
+        .header input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .header button {
+            padding: 10px 20px;
+            background-color: #F06292;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .receta-titulo {
+            text-align: center;
+            font-size: 24px;
+            margin: 40px 0 20px 0; /* Aumenta el margen superior para evitar que quede tapado */
+            color: #333;
+        }
+
+        .contenido {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .contenido .imagen-receta {
+            width: 40%;
+        }
+
+        .contenido .imagen-receta img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .contenido .detalles {
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .detalles .datos, .detalles .ingredientes, .detalles .pasos {
+            background-color: #FEEAE6;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .datos h3, .ingredientes h3, .pasos h3 {
+            font-size: 18px;
+            color: #E57373;
+            margin-bottom: 10px;
+        }
+
+        .datos p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .ingredientes ul, .pasos ol {
+            list-style: center;
+            padding: 0;
+        }
+
+        .ingredientes ul li, .pasos ol li {
+            background-color: #F8BBD0;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 10px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .pasos ol li span {
+            background-color: #FF80AB;
+            padding: 4px 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+        }
+
+        .footer {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .footer button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <img src="../img/img.jpeg" alt="Logo N.I.C.O.L.E.">
+            <input type="text" placeholder="Escribe una receta o busca un ingrediente...">
+            <button>Generar</button>
+       </div>
+        <h1 class="nombreReceta">Spaghetti Bolognese</h1>
+        <div class="imagenReceta">
+            <img src="../img/esp.jpg" >
+        </div>
+        
+        <div class="text">
+            <p>
+                El Spaghetti Bolognese es un plato clásico italiano, hecho con una salsa rica a base de carne, tomates, zanahorias y apio, servida sobre una cama de pasta al dente.
+            </p>
+        </div>
+        <div class="ingredientes">
+            <h3>Ingredientes</h3>
+            <ul>
+                <li>400 g de spaghetti.</li>
+                <li>500 g de carne molida de res.</li>
+                <li>1 cebolla, finamente picada.</li>
+                <li>2 dientes de ajo, picados.</li>
+                <li>1 zanahoria, rallada.</li>
+                <li>2 ramas de apio, picadas.</li>
+                <li>1 lata de tomates triturados (400 g).</li>
+                <li>2 cucharadas de pasta de tomate.</li>
+                <li>1 taza de caldo de res.</li>
+                <li>Sal y pimienta al gusto.</li>
+                <li>Queso parmesano rallado para servir.</li>
+            </ul>
+        </div>
+        <div class="preparacion">
+            <h3>Preparación</h3>
+            <ol>
+                <li>Hierve agua en una olla grande y cocina el spaghetti según las instrucciones del paquete hasta que esté al dente. Escurre y reserva.</li>
+                <li>En una sartén grande, cocina la cebolla, el ajo, la zanahoria y el apio con un poco de aceite hasta que estén tiernos.</li>
+                <li>Agrega la carne molida y cocina hasta que se dore, rompiéndola con una cuchara de madera.</li>
+                <li>Añade los tomates triturados, la pasta de tomate y el caldo de res. Cocina a fuego lento durante 30 minutos, removiendo de vez en cuando.</li>
+                <li>Sazona con sal y pimienta al gusto.</li>
+                <li>Sirve la salsa sobre el spaghetti y espolvorea con queso parmesano rallado.</li>
+            </ol>
+        </div>
+        
+</body>
+</html>

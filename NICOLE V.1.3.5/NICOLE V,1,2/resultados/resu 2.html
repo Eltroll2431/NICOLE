@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.I.C.O.L.E - Receta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/NICOLE V,1,2/resultados/css/resu.css">
+</head>
+<body >
+   <div class="fondo">
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="../3.html" class="nav-logo">NICOLE</a>
+        </div>
+        <div class="nav-right">
+            <!-- Menú de Idiomas -->
+            <div class="dropdown">
+          
+            </div>
+            <!-- Menú de Usuario -->
+            <div class="user-menu">
+                <button class="user-button">
+                    <img src="../img/user.jpeg" alt="Usuario">
+                </button>
+                <div class="menu-content">
+                    <p class="user-email">usuario@ejemplo.com</p>
+                    <a href="#">Ajustes</a>
+                    <a href="#">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script src="/inicio/scripts/inicio.js"></script></center>
+    <main>
+        <section class="main-content">
+            <h1>¿Qué tienes en mente hoy?</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Escribe una receta o busca un ingrediente...">
+                <button class="search-button">Generar</button>
+            </div>
+        </section>
+       
+        <div class="recipe-container">
+            <div class="part1">
+            <div class="titulo">
+            <h1>tacos dr pollo</h1><br>
+            <div class="image-section">
+                <img src="../img/ta.webp" alt="pastel de chocolate">
+            </div></div>
+            <div class="info-section"> 
+                <h2>datos sobre este platillo</h2>
+                <div class="text">
+                <p>El pastel de chocolate, tarta de chocolate o torta de chocolate
+                    , es un postre conocido internacionalmente,
+                     que se popularizó a finales del siglo XIX y se sirve frecuentemente en reuniones
+                     , como bodas y fiestas de cumpleaños</p> </div>
+            </div>
+         </div>
+            <div class="part2">
+            <div class="steps-container">
+                <div class="ingredients">
+                    <div class="conta">
+                    <h2>ingredientes</h2>
+                    <ul>
+                        <li><span>2</span> 2 pechugas de pollo Campollo, cortadas en tiras.</li>
+                        <li><span>4 </span>   tortillas de maíz o harina.</li>
+                        <li><span>1</span> cebolla morada, cortada en julianas.</li>
+                        <li><span>1</span> pimiento rojo, cortado en tiras.</li>
+                        <li><span>1</span> pimiento verde, cortado en tiras.</li>
+                        <li><span>1</span> tomate, cortado en cubitos.</li>
+                        <li><span>1</span> 1/2 taza de lechuga picada.</li>
+                        <li><span>1</span> 1/4 taza de cilantro fresco, picado.</li>
+                        <li><span>1</span> limón, cortado en cuartos.</li>
+                        <li><span>1</span> 1/2L aceite</li>
+                        <li><span>1</span> aguacate grande, cortado en rodajas.</li>
+                        <li><span>1</span> Sal y pimienta al gusto.</li>
+                    </ul>
+                </div>
+                </div>
+                
+                <div class="steps">
+                    <center>
+                    <h2>paso a paso</h2></center>
+                    <div class="carousel">
+                        <button class="nav-button" id="prevButton">&#8249;</button> <!-- Botón de navegación hacia atrás -->
+                        
+                        <div class="carousel-item active">paso 1. <br><br>En una sartén grande, calienta un poco de aceite a fuego medio-alto.</div>
+                        <div class="carousel-item">paso2.<br><br> Agrega las tiras de pollo y sazona con sal y pimienta al gusto.</div>
+                        <div class="carousel-item">paso3.<br><br> Cocina el pollo hasta que esté dorado y completamente cocido, aproximadamente de 5 a 7 minutos por cada lado y al <br>pasar este tiempo Retira el pollo de la sartén y reserva en un platillo.
+                           </div>
+                        <div class="carousel-item">paso4.<br><br>En la misma sartén, agrega un poco más de aceite si es necesario y añade la cebolla morada, los pimientos rojo y verde. </div>
+                        <div class="carousel-item">paso5.<br><br>Saltea las verduras hasta que estén tiernas, pero aún crujientes,<br> alrededor de 5 minutos. Retira las verduras de la sartén y reserva</div>
+                        <div class="carousel-item">paso6.<br><br>Calienta las tortillas de maíz o harina en una sartén limpia o en el microondas hasta que estén calientes y flexibles.</div>
+                        <div class="carousel-item">paso7.<br><br>Para armar los tacos, coloca una porción de pollo cocido en el centro<br> de cada tortilla caliente. Luego, agrega una porción de las verduras salteadas. <br>Espolvorea un poco de tomate, lechuga y cilantro fresco<br> sobre cada taco.</div>
+                        <div class="carousel-item">paso8.<br><br>Decora los tacos con rodajas de aguacate y exprime un poco de jugo Decora los tacos con rodajas de aguacate y exprime un poco de jugo de limón fresco sobre ellos para un toque de frescura adicional.de limón fresco sobre ellos para un toque de frescura adicional.</div>
+                        <div class="carousel-item">paso9.<br><br>y ahora solo queda servir y disfrutar de nuestra rica torta</div>
+                        
+                        <button class="nav-button" id="nextButton">&#8250;</button> <!-- Botón de navegación hacia adelante -->
+                    </div>
+            </div>
+        </div>
+       
+    </main>
+</div>
+</div>
+    <script src="scripts/resu.js"></script>
+</body>
+</html>
+<script>
+    
+document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.carousel-item'); // Selecciona todos los elementos del carrusel
+    const prevButton = document.getElementById('prevButton'); // Botón hacia atrás
+    const nextButton = document.getElementById('nextButton'); // Botón hacia adelante
+    let currentIndex = 0; // Índice actual del carrusel
+
+    function showItem(index) {
+        items.forEach((item, i) => {
+            item.classList.remove('active'); // Remueve la clase 'active' de todas las palabras
+            if (i === index) {
+                item.classList.add('active'); // Añade la clase 'active' solo a la palabra seleccionada
+            }
+        });
+    }
+
+    // Mostrar el primer elemento inicialmente
+    showItem(currentIndex);
+
+    // Evento para el botón hacia adelante
+    nextButton.addEventListener('click', function () {
+        currentIndex = (currentIndex + 1) % items.length; // Aumenta el índice de forma cíclica
+        showItem(currentIndex);
+    });
+
+    // Evento para el botón hacia atrás
+    prevButton.addEventListener('click', function () {
+        currentIndex = (currentIndex - 1 + items.length) % items.length; // Disminuye el índice de forma cíclica
+        showItem(currentIndex);
+    });
+});
+
+
+</script>

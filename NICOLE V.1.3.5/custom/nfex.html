@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para los campos deshabilitados */
+input:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+    </style>
+</head>
+<body>
+    <h2>Recuperar Contraseña</h2>
+    <form id="recoveryForm" method="post">
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="verificationCode">Código de Verificación:</label>
+        <input type="text" id="verificationCode" name="verificationCode" maxlength="6" disabled><br><br>
+
+        <label for="newPassword">Escriba su nueva contraseña:</label>
+        <input type="password" id="newPassword" name="newPassword" required disabled><br><br>
+
+        <label for="repeatPassword">Repita su nueva contraseña:</label>
+        <input type="password" id="repeatPassword" name="repeatPassword" required disabled><br><br>
+
+        <button type="submit" disabled>Enviar</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+<script>
+    // Obtener los elementos del formulario
+const email = document.getElementById('email');
+const verificationCode = document.getElementById('verificationCode');
+const newPassword = document.getElementById('newPassword');
+const repeatPassword = document.getElementById('repeatPassword');
+const submitBtn = document.querySelector('button');
+
+// Habilitar el campo de código de verificación si el email es válido
+email.addEventListener('input', () => {
+    if (email.value.trim() !== '' && validateEmail(email.value)) {
+        verificationCode.disabled = false;
+    } else {
+        verificationCode.disabled = true;
+        newPassword.disabled = true;
+        repeatPassword.disabled = true;
+        submitBtn.disabled = true;
+    }
+});
+
+// Habilitar los campos de nueva contraseña y repetición cuando se ingrese el código de verificación
+verificationCode.addEventListener('input', () => {
+    if (verificationCode.value.trim().length === 6) {
+        newPassword.disabled = false;
+        repeatPassword.disabled = false;
+    } else {
+        newPassword.disabled = true;
+        repeatPassword.disabled = true;
+        submitBtn.disabled = true;
+    }
+});
+
+// Habilitar el botón de enviar cuando ambas contraseñas coincidan
+newPassword.addEventListener('input', validatePasswords);
+repeatPassword.addEventListener('input', validatePasswords);
+
+// Función para validar que las contraseñas coinciden
+function validatePasswords() {
+    if (newPassword.value.trim() !== '' && repeatPassword.value.trim() !== '' && newPassword.value === repeatPassword.value) {
+        submitBtn.disabled = false;
+    } else {
+        submitBtn.disabled = true;
+    }
+}
+
+// Función para validar formato de email
+function validateEmail(email) {
+    const re = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+    return re.test(String(email).toLowerCase());
+}
+
+</script>
+</html>

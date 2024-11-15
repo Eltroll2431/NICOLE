@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de Perfil</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Estilos del botón */
+.profile-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Estilos de la tarjeta de perfil */
+.profile-card {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    z-index: 100;
+}
+
+/* Efecto de fade-in cuando se muestre */
+.profile-card.show {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animación para el efecto de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.user{
+    border-radius: 50px;
+    width: 50px;
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Botón -->
+    <button id="profileBtn" class="profile-btn">usuario0000@gmail.com</button>
+
+
+    <div id="profileCard" class="profile-card">
+        <img src="/NICOLE V,1,2/img/user.jpeg" class="user" alt="">
+        <h3>Criss</h3>
+        <p>Edad: 17 años</p>
+        <p>Pasiones: Música, arte, programación</p>
+        <p>Estudiante en el SENA</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<script>
+    // Obtener los elementos del DOM
+const profileBtn = document.getElementById('profileBtn');
+const profileCard = document.getElementById('profileCard');
+
+// Mostrar la tarjeta al pasar el cursor sobre el botón
+profileBtn.addEventListener('mouseover', () => {
+    profileCard.classList.add('show');
+});
+
+// Ocultar la tarjeta al retirar el cursor del botón o de la tarjeta
+profileBtn.addEventListener('mouseout', () => {
+    profileCard.classList.remove('show');
+});
+
+profileCard.addEventListener('mouseleave', () => {
+    profileCard.classList.remove('show');
+});
+
+</script>
+</html>

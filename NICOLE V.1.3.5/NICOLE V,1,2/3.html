@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.I.C.O.L.E - Refrigerador de Ingredientes y Recetas</title>
+    <style>
+          body {
+            background-image: url("img/fondo.png");
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }
+        .fondo{
+            background-size: cover;
+            background: linear-gradient(to bottom, #ffe6ada1, #ffa9b2c2); 
+        }
+
+        /* Estilos para el encabezado */
+        header {
+            background-color: #333;
+            padding: 10px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .user-profile {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .user-profile img {
+            width: 40px;
+            border-radius: 50%;
+        }
+
+        /* Dropdown del perfil de usuario */
+        .user-dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .user-dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .user-dropdown a:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Estilos para la ventana emergente */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            z-index: 100; /* Se asegura que esté al frente */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            backdrop-filter: blur(0.4rem);/* Fondo oscuro con transparencia */
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .modal-content button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .modal-content .btn-yes {
+            background-color: #4c90af;
+            color: white;
+        }
+
+        .modal-content .btn-no {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .modal-content button:hover {
+            opacity: 0.8;
+        }
+        body {
+            font-family: Arial, sans-serif;
+          
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat; 
+        }
+        a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Mantiene el color del texto */
+}
+
+a:hover {
+    text-decoration: underline; /* Opcional, si quieres que el subrayado aparezca al pasar el cursor */
+}
+
+        .container {
+            width: 70%;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #fce5dc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e0e0e0;
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .user-dropdown {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .user-dropdown a {
+            display: block;
+            padding: 8px 0;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .user-dropdown a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .tabs button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #fce5dc;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .tabs button.active {
+            background-color: #ff4d88;
+            color: white;
+        }
+        .sea{
+            width: 
+            40px;
+        }
+
+        .search-bar {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .search-bar input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            border-radius: 25px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            background-color: #ffa4c2;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .ingredient-card, .recipe-box {
+            width: 150px;
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .ingredient-card:hover, .recipe-box:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+
+        .ingredient-card img, .recipe-box img {
+            width: 140%;
+            height: 100px;
+            border-radius: 10px;
+            max-width: 130px;
+            max-height: 130px;
+        }
+        .ingredient-card p, .recipe-box p {
+            margin-top: 10px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .actions button {
+            padding: 10px 20px;
+            background-color: #ff4d88;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+                /* Estilos del botón */
+.profile-btn {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Estilos de la tarjeta de perfil */
+.profile-card {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    z-index: 100;
+}
+
+/* Efecto de fade-in cuando se muestre */
+.profile-card.show {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animación para el efecto de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.user{
+    border-radius: 50px;
+    width: 50px;
+}
+/* Media query para tablets y dispositivos medianos */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Reduce el ancho del contenedor en tablets */
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en lugar de tres */
+    }
+
+    .search-bar input[type="text"] {
+        width: 70%; /* Reduce el ancho de la barra de búsqueda */
+    }
+
+    .tabs button {
+        font-size: 14px; /* Disminuye el tamaño del texto en los botones */
+    }
+
+    .modal-content {
+        width: 90%; /* Ajusta el ancho de la ventana emergente */
+    }
+}
+
+/* Media query para móviles */
+@media (max-width: 480px) {
+    .container {
+        width: 100%; /* Ajusta la página a toda la pantalla */
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column; /* Alinea el logo y el perfil en columna */
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .user-profile img {
+        width: 35px; /* Tamaño más pequeño de imagen de perfil */
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Solo una columna en dispositivos móviles */
+    }
+
+    .search-bar input[type="text"] {
+        width: 100%; /* Barra de búsqueda a 100% en móviles */
+        font-size: 14px;
+    }
+
+    .search-bar button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .ingredient-card, .recipe-box {
+        width: 100%; /* Cartas de ingredientes y recetas ocupan todo el ancho */
+        max-width: none;
+    }
+
+    .ingredient-card img, .recipe-box img {
+        width: 100%; /* Imágenes al 100% del contenedor */
+        height: auto;
+    }
+
+    .tabs button {
+        font-size: 12px; /* Ajusta el tamaño del texto en móviles */
+        padding: 8px 15px;
+    }
+
+    .modal-content {
+        width: 90%; /* Asegura que la ventana emergente sea responsiva */
+    }
+}
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">N.I.C.O.L.E</div>
+            <div class="user-profile" onclick="toggleDropdown()">
+                <img src="/NICOLE V,1,2/img/user.jpeg" alt="User Profile">
+                <div class="user-dropdown" id="userDropdown">
+
+                    <button id="profileBtn" class="profile-btn">usuario0000@gmail.com</button>
+
+                    <div id="profileCard" class="profile-card">
+                        <h3>Criss</h3>
+                        <p>Edad: 17 años</p>
+                        <p>Pasiones: Música, arte, programación</p>
+                        <p>Estudiante en el SENA</p>
+                    </div>
+                
+       
+     
+
+    <script src="script.js"></script>
+
+                    <a href="configuracion.html">Configuraciones</a>
+                    <a href="#" onclick="showLogoutModal()">Cerrar Sesión</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Ventana emergente -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h2>¿Estás seguro de que quieres dejar de cocinar?</h2>
+            <button class="btn-yes" href="/NICOLE V,1,2/html/1.html" onclick="logout()">aceptar</button>
+            <button class="btn-no" onclick="closeModal()">cancelar</button>
+        </div>
+    </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Escribe una receta o busca un ingrediente...">
+            <a href="7.html" type="button" class="submit"><img class="sea" src="/NICOLE V,1,2/img/search.png" alt=""></a>
+        </div>
+        <div class="tabs">
+            <button class="active" id="recetasBtn" onclick="showRecetas()">Recetas</button>
+            <button id="ingredientesBtn" onclick="showIngredientes()">Ingredientes</button>
+        </div>
+        <div class="content" id="recetasContent">
+            <h2>Recetas Disponibles</h2>
+            <div class="grid-container">
+                <div class="recipe-box">
+                    <a href="/NICOLE V,1,2/resultados/resu.html">
+                        <img src="/NICOLE V,1,2/img/P.webp" alt="Receta 01">
+                        <p>Receta 01: Pastel de Chocolate</p>
+                        <div class="stars">★★★★☆</div>
+                    </a>
+                </div>
+                <div class="recipe-box">
+                    <a href="/NICOLE V,1,2/resultados/resu 2.html">
+                        <img src="/NICOLE V,1,2/img/ta.webp" alt="Receta 02">
+                        <p>Receta 02: Tacos de Pollo</p>
+                        <div class="stars">★★★★☆</div>
+                    </a>
+                </div>
+                <div class="recipe-box">
+                    <a href="/NICOLE V,1,2/resultados/resu 3.html">
+                        <img src="/NICOLE V,1,2/img/en.jpeg" alt="Receta 03">
+                        <p>Receta 03: Ensalada César</p>
+                        <div class="stars">★★★☆☆</div>
+                    </a>
+                </div>
+                <div class="recipe-box">
+                    <a href="/NICOLE V,1,2/resultados/resu 4.html">
+                        <img src="/NICOLE V,1,2/img/pizza.jpeg" alt="Receta 04">
+                        <p>Receta 04: Pizza Margarita</p>
+                        <div class="stars">★★★★★</div>
+                    </a>
+                </div>
+                <div class="recipe-box">
+                    <a href="/NICOLE V,1,2/resultados/resu 5.html">
+                        <img src="/NICOLE V,1,2/img/amb.avif" alt="Receta 05">
+                        <p>Receta 05: Hamburguesa texana</p>
+                        <div class="stars">★★★★★</div>
+                    </a>
+                </div>
+                <div class="recipe-box">
+                    <a href="/NICOLE V,1,2/resultados/resu 6.html">
+                        <img src="/NICOLE V,1,2/img/esp.jpg" alt="Receta 06">
+                        <p>Receta 06: Spaghetti Bolognese</p>
+                        <div class="stars">★★★★☆</div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="content" id="ingredientesContent" style="display: none;">
+            <h2>Ingredientes Disponibles</h2>
+            <div class="grid-container">
+                <a href="ingredientes/resu.html">
+                <div class="ingredient-card">
+                    <img src="img/papas.png" alt="Hamburguesa">
+                    <p>papas</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // Obtener los elementos del DOM
+const profileBtn = document.getElementById('profileBtn');
+const profileCard = document.getElementById('profileCard');
+
+// Mostrar la tarjeta al pasar el cursor sobre el botón
+profileBtn.addEventListener('mouseover', () => {
+    profileCard.classList.add('show');
+});
+
+// Ocultar la tarjeta al retirar el cursor del botón o de la tarjeta
+profileBtn.addEventListener('mouseout', () => {
+    profileCard.classList.remove('show');
+});
+
+profileCard.addEventListener('mouseleave', () => {
+    profileCard.classList.remove('show');
+});
+
+
+
+
+
+
+
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('userDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function showRecetas() {
+            document.getElementById('recetasContent').style.display = 'block';
+            document.getElementById('ingredientesContent').style.display = 'none';
+            document.getElementById('recetasBtn').classList.add('active');
+            document.getElementById('ingredientesBtn').classList.remove('active');
+        }
+
+        function showIngredientes() {
+            document.getElementById('ingredientesContent').style.display = 'block';
+            document.getElementById('recetasContent').style.display = 'none';
+            document.getElementById('ingredientesBtn').classList.add('active');
+            document.getElementById('recetasBtn').classList.remove('active');
+        }
+        function toggleDropdown() {
+            var dropdown = document.getElementById("userDropdown");
+            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+        }
+
+        // Función para mostrar la ventana emergente
+        function showLogoutModal() {
+            document.getElementById("logoutModal").style.display = "block";
+        }
+
+        // Función para cerrar la ventana emergente
+        function closeModal() {
+            document.getElementById("logoutModal").style.display = "none";
+        }
+
+        // Función para redirigir a la página 1.html (cerrar sesión)
+        function logout() {
+            window.location.href = "/NICOLE V,1,2/html/1.html"; // Reemplaza con la página que redirige después de cerrar sesión
+        }
+
+        // Cerrar dropdown si se hace clic fuera del perfil
+        window.onclick = function(event) {
+            if (!event.target.matches('.user-profile img')) {
+                var dropdowns = document.getElementsByClassName("user-dropdown");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === "block") {
+                        openDropdown.style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

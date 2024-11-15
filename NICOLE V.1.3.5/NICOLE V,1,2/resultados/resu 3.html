@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.I.C.O.L.E - Receta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/NICOLE V,1,2/resultados/css/resu.css">
+</head>
+<body >
+   <div class="fondo">
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="../3.html" class="nav-logo">NICOLE</a>
+        </div>
+        <div class="nav-right">
+            <!-- Menú de Idiomas -->
+            <div class="dropdown">
+                <button id="languageButton" class="dropdown-button">Idioma</button>
+              
+            </div>
+            <!-- Menú de Usuario -->
+            <div class="user-menu">
+                <button class="user-button">
+                    <img src="../img/user.jpeg" alt="Usuario">
+                </button>
+                <div class="menu-content">
+                    <p class="user-email">usuario@ejemplo.com</p>
+                    <a href="#">Ajustes</a>
+                    <a href="#">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script src="/inicio/scripts/inicio.js"></script></center>
+    <main>
+        <section class="main-content">
+            <h1>¿Qué tienes en mente hoy?</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Escribe una receta o busca un ingrediente...">
+                <button class="search-button">Generar</button>
+            </div>
+        </section>
+       
+        <div class="recipe-container">
+            <div class="part1">
+            <div class="titulo">
+            <h1>ensalada cesar</h1><br>
+            <div class="image-section">
+                <img src="../img/en.jpeg" alt="pastel de chocolate">
+            </div></div>
+            <div class="info-section"> 
+                <h2>datos sobre este platillo</h2>
+                <div class="text">
+                <p>la ensalada César fue creada en 1924 en Tijuana, México, por el chef Cesare Cardini, quien improvisó la receta con <br>ingredientes limitados.</p> </div>
+            </div>
+         </div>
+            <div class="part2">
+            <div class="steps-container">
+                <div class="ingredients">
+                    <div class="conta">
+                    <h2>ingredientes</h2>
+                    <ul>
+                        <li><span>2</span> 1 lechuga romana</li>
+                        <li><span>1 </span>    1 diente de ajo</li>
+                        <li><span>1</span>1/4 taza de queso parmesano rallado</li>
+                        <li><span>1</span>  Jugo de  limón</li>
+                        <li><span>1</span> cucharadita de salsa Worcestershire</li>
+                        <li><span>1</span> 1/4 taza de aceite de oliva</li>
+                        <li><span>1</span>  Sal y pimienta al gusto</li>
+                    </ul>
+                </div>
+                </div>
+                
+                <div class="steps">
+                    <center>
+                    <h2>paso a paso</h2></center>
+                    <div class="carousel">
+                        <button class="nav-button" id="prevButton">&#8249;</button> <!-- Botón de navegación hacia atrás -->
+                        
+                        <div class="carousel-item active">paso 1. <br><br> Lava bien las hojas de lechuga romana y córtalas en trozos medianos.
+
+                            
+                        
+                           
+                           
+                           
+                            
+                           
+                            
+                            Incorpora el queso parmesano: Añade el queso parmesano rallado por encima para dar sabor.</div>
+                        <div class="carousel-item">paso2.<br><br>    Machaca el ajo y mézclalo en un bowl con el jugo de limón, la salsa Worcestershire y el huevo (si usas mayonesa, omite el huevo).</div>
+                        <div class="carousel-item">paso3.<br><br> Añade sal y pimienta al gusto.
+                           </div>
+                        <div class="carousel-item">paso4.<br><br>  Poco a poco, agrega el aceite de oliva mientras bates para que emulsione.</div>
+                        <div class="carousel-item">paso5.<br><br>  Coloca la lechuga en un bol grande y vierte el aderezo sobre ella. Mezcla bien para que todas las hojas queden cubiertas.</div>
+                        <div class="carousel-item">paso6.<br><br> Añade los crutones: Espolvorea los crutones sobre la ensalada.</div>
+                        <div class="carousel-item">paso7.<br><br>y ahora solo queda servir y disfrutar de nuestra rica torta</div>
+                        
+                        <button class="nav-button" id="nextButton">&#8250;</button> <!-- Botón de navegación hacia adelante -->
+                    </div>
+            </div>
+        </div>
+       
+    </main>
+</div>
+</div>
+    <script src="scripts/resu.js"></script>
+</body>
+</html>
+<script>
+    
+document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.carousel-item'); // Selecciona todos los elementos del carrusel
+    const prevButton = document.getElementById('prevButton'); // Botón hacia atrás
+    const nextButton = document.getElementById('nextButton'); // Botón hacia adelante
+    let currentIndex = 0; // Índice actual del carrusel
+
+    function showItem(index) {
+        items.forEach((item, i) => {
+            item.classList.remove('active'); // Remueve la clase 'active' de todas las palabras
+            if (i === index) {
+                item.classList.add('active'); // Añade la clase 'active' solo a la palabra seleccionada
+            }
+        });
+    }
+
+    // Mostrar el primer elemento inicialmente
+    showItem(currentIndex);
+
+    // Evento para el botón hacia adelante
+    nextButton.addEventListener('click', function () {
+        currentIndex = (currentIndex + 1) % items.length; // Aumenta el índice de forma cíclica
+        showItem(currentIndex);
+    });
+
+    // Evento para el botón hacia atrás
+    prevButton.addEventListener('click', function () {
+        currentIndex = (currentIndex - 1 + items.length) % items.length; // Disminuye el índice de forma cíclica
+        showItem(currentIndex);
+    });
+});
+
+
+</script>
